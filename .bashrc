@@ -1,6 +1,10 @@
-export EDITOR=vim
+# Try to execute `vim --version` to see if vim is installed
+if vim --version &> /dev/null; then
+	export EDITOR=vim
+	export GIT_EDITOR="vim"
+fi
+
 export VISUAL="$EDITOR"
-export GIT_EDITOR="vim"
 
 export HISTFILE=/workspaces/.codespaces/.persistedshare/.bash_history
 # Write history each command due to Codespace sometimes not flushing
